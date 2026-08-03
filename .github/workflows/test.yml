@@ -10,9 +10,15 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Tap this checkout
+        run: brew tap humblemonk/shurectl "$GITHUB_WORKSPACE"
+
       - name: Install from formula
-        run: brew install --build-from-source ./Formula/shurectl.rb
+        run: brew install --build-from-source humblemonk/shurectl/shurectl
+
       - name: Run formula test block
-        run: brew test shurectl
+        run: brew test humblemonk/shurectl/shurectl
+
       - name: Audit
-        run: brew audit --formula ./Formula/shurectl.rb
+        run: brew audit --formula humblemonk/shurectl/shurectl
