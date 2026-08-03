@@ -1,0 +1,21 @@
+name: brew test
+
+on:
+  push:
+    paths: ["Formula/**"]
+  workflow_dispatch:
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install from formula
+        run: brew install --build-from-source ./Formula/shurectl.rb
+      - name: Run formula test block
+        run: brew test shurectl
+      - name: Audit
+        run: brew audit --formula ./Formula/shurectl.rb
