@@ -9,10 +9,13 @@ class Shurectl < Formula
   depends_on "rust" => :build
 
   # macOS needs nothing at runtime: hidapi uses IOKit, cpal uses CoreAudio.
-  # Linuxbrew needs ALSA headers for cpal; hidapi's linux-native backend
-  # talks to /dev/hidrawN directly and needs no system library.
+  # Linuxbrew needs ALSA for cpal and libudev for hidapi's linux-native
+  # backend (device enumeration via the udev crate); both -sys crates locate
+  # their libraries through pkg-config.
   on_linux do
+    depends_on "pkgconf" => :build
     depends_on "alsa-lib"
+    depends_on "systemd"
   end
 
   def install

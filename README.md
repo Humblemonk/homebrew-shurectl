@@ -12,7 +12,9 @@ brew install humblemonk/shurectl/shurectl
 Updates come through `brew upgrade` like any other formula.
 
 The formula builds from source, so the first install pulls in a Rust toolchain and takes a
-minute or two. There are no runtime dependencies on macOS.
+minute or two. There are no runtime dependencies on macOS. On Linux, Homebrew pulls in
+`alsa-lib` and `systemd` (for libudev), and you'll need a udev rule for non-root access to
+`/dev/hidrawN` — see [the main repository](https://github.com/Humblemonk/shurectl#linux--udev-rules-required-for-non-root-access).
 
 ## Usage
 
