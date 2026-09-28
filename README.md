@@ -1,7 +1,7 @@
 # homebrew-shurectl
 
 Homebrew tap for [shurectl](https://github.com/Humblemonk/shurectl) — a terminal UI
-configurator for Shure MOTIV USB audio interfaces and Microphones (MVX2U Gen 1/2, MV6, MV7+).
+configurator for Shure MOTIV USB audio interfaces and Microphones.
 
 ## Install
 
