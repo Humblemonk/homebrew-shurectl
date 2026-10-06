@@ -1,8 +1,8 @@
 class Shurectl < Formula
   desc "Terminal UI configurator for Shure USB audio interfaces"
   homepage "https://github.com/Humblemonk/shurectl"
-  url "https://github.com/Humblemonk/shurectl/archive/refs/tags/v2.8.0.tar.gz"
-  sha256 "b914a9123d93d7480fd0c964409af0f37809e19f329b772e1a2bb77add91be06"
+  url "https://github.com/Humblemonk/shurectl/archive/refs/tags/v2.8.1.tar.gz"
+  sha256 "dd1db881ae561a224e127da64afb2079a363671d2783fb2c0bd6cdcd72405fee"
   license "GPL-3.0-only"
   head "https://github.com/Humblemonk/shurectl.git", branch: "main"
 
